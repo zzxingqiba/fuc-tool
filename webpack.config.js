@@ -1,5 +1,5 @@
 const path = require("path");
-const ESLintWebpackPlugin = require("eslint-webpack-plugin");
+// const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -22,10 +22,10 @@ module.exports = {
   // 插件
   plugins: [
     // npm i eslint-webpack-plugin eslint -D
-    new ESLintWebpackPlugin({
-      // 指定检查文件的根目录
-      context: path.resolve(__dirname, "./src"),
-    }),
+    // new ESLintWebpackPlugin({
+    //   // 指定检查文件的根目录
+    //   context: path.resolve(__dirname, "./src"),
+    // }),
     // npm i html-webpack-plugin -D
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),

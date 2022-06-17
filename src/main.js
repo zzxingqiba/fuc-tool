@@ -1,5 +1,7 @@
 import Utils from './util/index';
+import { Promise } from './util/promise';
 window.Utils = Utils
+window.Promise = Promise
 const _proxy = {
   enumerable: true,
   configurable: true,
@@ -21,3 +23,4 @@ Object.keys(Utils).forEach(key => {
   proxy(window, 'Utils', key)
 })
 
+// ===========>Test
