@@ -41,4 +41,32 @@ export function toObject (arr) {
   return res
 }
 
-
+// 实现简易绑定事件
+class EventEmiter {
+  constructor(){
+    this.events = {}
+  }
+  emit(event,...args){
+    this.events[event].map(fn => {
+      console.log(this)
+      fn.apply(this, args)
+    })
+  }
+  on(event, fn){
+    if(this.events[event]){
+      this.events[event].push(fn)
+    }else{
+      this.events[event] = [fn]
+    }
+  }
+  remove(event){
+    delete this.events[event] 
+  }
+}
+// const event = new EventEmiter()
+// event.on('handle', (a, b) => {
+//   console.log(a, b)
+// })
+// setTimeout(()=>{
+//   event.emit('handle', 2, 4)
+// },2000)

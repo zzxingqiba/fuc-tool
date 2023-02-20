@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/main.js",
+  devtool:  "cheap-module-source-map",
   // 输出
   output: {
     path: undefined,
